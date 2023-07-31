@@ -8,7 +8,8 @@ export default function Nav() {
   const router = useRouter();
 
   const onClickMenu = (path: string) => {
-      router.push(`/${path}`);
+    setHidden(!hidden);
+    router.push(`/${path}`);
   }
 
   const handleHidden = () => {
