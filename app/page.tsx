@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 export default function Home() {
   return (
     <div className="grid grid-cols-2 gap-2 p-2">
