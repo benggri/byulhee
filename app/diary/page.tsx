@@ -33,8 +33,8 @@ export default function Diary() {
       <div className="py-4 mx-auto max-w-screen-xl text-left lg:py-4">
         <p className="text-2xl font-extrabold tracking-tight leading-none text-gray-900 md:text-2xl lg:text-2xl dark:text-white mb-2">2023</p>
         <div className="grid grid-cols-2 gap-3">
-          {diaryData.map((data:DiaryModel, index:Number) => <DiaryComponent key={data.date+""+index} image={data.image} date={data.date} title={data.title} contents={data.contents} author={data.author}></DiaryComponent>)}
-          {skeleton.map((data:any, index:Number) => <DiaryComponent key={""+index} image={undefined} date={undefined} title={undefined} contents={undefined} author={undefined}></DiaryComponent>)}
+          {diaryData.map((data:DiaryModel, index:Number) => <DiaryComponent key={data.date+""+index} index={data.index} image={data.image} date={data.date} title={data.title} contents={data.contents} author={data.author}></DiaryComponent>)}
+          {skeleton.map((data:any, index:Number) => <DiaryComponent key={""+index} index={undefined} image={undefined} date={undefined} title={undefined} contents={undefined} author={undefined}></DiaryComponent>)}
         </div>
       </div>
     </section>
