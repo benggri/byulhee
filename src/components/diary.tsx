@@ -30,12 +30,7 @@ export default function DiaryComponent(
         <div className="h-10 max-h-10 bg-gray-200 rounded-md dark:bg-gray-700 mb-2.5"></div>
       }
       <div className="flex items-center mt-4 space-x-3">
-        <Image src="/star.svg"
-                alt="Star Logo"
-                className="dark:invert"
-                width={26}
-                height={26}
-                priority />
+        <Image src="/star.svg" alt="Star Logo" className="dark:invert" width={26} height={26} priority />
         {
           props.date ?
           <div className="h-4 max-h-4 w-full text-xs dark:bg-gray-700">{props.date}</div> : 

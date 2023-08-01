@@ -4,11 +4,16 @@ import MockupPc from '../../../src/components/mockup_pc';
 export default function Device(
     {params} : {params: {device:string}}
 ) {
-    if (params.device == "mobile") {
-        return (<MockupMobile></MockupMobile>);
-    } else if (params.device == "pc") {
-        return (<MockupPc></MockupPc>);
-    } else {
-        return (<MockupMobile></MockupMobile>);
+  const device = params.device;
+  return (
+    <div>
+    {
+      (params.device === 'mobile') ? 
+        <MockupMobile></MockupMobile> :
+        (params.device === 'pc') ? 
+          <MockupPc></MockupPc> :
+          <MockupMobile></MockupMobile>
     }
+    </div>
+  );
 }
