@@ -26,7 +26,7 @@ export default function DiaryComponent(
       }
       {
         props.contents ? 
-        <p className="h-10 max-h-10 text-sm dark:bg-gray-700 mb-2.5 break-words">{(props.contents.length > 20 ? props.contents.substring(0, 20) + "..." : props.contents)}</p> :
+        <p className="h-10 max-h-10 text-sm dark:bg-gray-700 mb-2.5 break-words truncate">{props.contents}</p> :
         <div className="h-10 max-h-10 bg-gray-200 rounded-md dark:bg-gray-700 mb-2.5"></div>
       }
       <div className="flex items-center mt-4 space-x-3">
