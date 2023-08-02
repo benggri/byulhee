@@ -16,10 +16,12 @@ export default function Main({
         <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-400">Here at Star&#39;s Home we focus on markets where art, drawing can unlock long-term value and drive economic growth.</p>
       </div>
       <div className="grid grid-cols-2 gap-2 p-2">
-        <div className="col-span-2 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12">
+        <div className="col-span-2 bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12">
           <div className="flex">
-            <blockquote className="pl-3 inline-block align-middle text-md font-semibold text-gray-900 dark:text-white">
-              <p>Hellow!</p>
+            <blockquote className="pl-3 text-md font-semibold text-gray-900 dark:text-white">
+              <p className="text-lg">Welcome!</p>
+              <p>to all of you who visited my website.</p>
+              <p>Be happy every day.</p>
             </blockquote>
           </div>
         </div>
