@@ -35,9 +35,9 @@ export default function TimeLine(
           <div className="text-sm font-semibold text-gray-500 lex dark:text-gray-300">{index}대 대통령  <a href="#" className="font-semibold text-gray-900 dark:text-white hover:underline">{name}</a></div>
         </div>
         {
-          tags?.map((tag) => {
+          tags?.map((tag, _index) => {
             return (
-              <div className="p-3 text-xs italic font-normal text-gray-500 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-600 dark:border-gray-500 dark:text-gray-300">
+              <div key={_index} className="p-3 text-xs italic font-normal text-gray-500 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-600 dark:border-gray-500 dark:text-gray-300">
                 <span className={getLabelColor(tag.type)+" text-yellow-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300"}>{tag.type}</span>
                 {tag.value}
               </div>
