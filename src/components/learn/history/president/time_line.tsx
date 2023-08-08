@@ -33,8 +33,8 @@ export default function TimeLine(
         <div className="items-center justify-between mb-3 sm:flex">
           <div className="text-sm font-semibold text-gray-500 lex dark:text-gray-300 whitespace-pre-wrap">{index.join(', \n')}대 대통령  <a href="#" className="font-semibold text-gray-900 dark:text-white hover:underline">{name}</a></div>
           <time className="mb-1 text-xs font-normal text-gray-400 sm:order-last sm:mb-0">
-          {terms.map((term) => {
-            return <p className="text-xs text-rigth font-normal text-gray-400 sm:pl-2 sm:mb-0">{term[0]} ~ {term[1] || ''}</p>
+          {terms.map((term, index) => {
+            return <p key={'time_p_' + index} className="text-xs text-rigth font-normal text-gray-400 sm:pl-2 sm:mb-0">{term[0]} ~ {term[1] || ''}</p>
           })}
           </time>
         </div>
