@@ -41,7 +41,7 @@ export default function TimeLine(
           <div className="text-sm font-semibold text-gray-500 dark:text-gray-300">
           {
             labels.map((label, index) => {
-              return <p>{label.index}대 ({label.terms[0]} ~ {label.terms[1] || ''})</p>;
+              return <p key={'time_line_p_'+index}>{label.index}대 ({label.terms[0]} ~ {label.terms[1] || ''})</p>;
             })
           }
           </div>
@@ -51,7 +51,7 @@ export default function TimeLine(
             return (
               <div key={_index} className="p-3 text-xs italic font-normal text-gray-500 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-600 dark:border-gray-500 dark:text-gray-300">
                 <span className={getLabelColor(tag.type)+" text-yellow-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300"}>{tag.type}</span>
-                {tag.value}exi
+                {tag.value}
               </div>
             );
           })
