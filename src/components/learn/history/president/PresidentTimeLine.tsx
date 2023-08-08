@@ -8,7 +8,7 @@ interface Label {
   terms: Array<String> | string[];
 }
 
-export default function TimeLine(
+export default function PresidentTimeLine(
   {
     labels,
     name,
