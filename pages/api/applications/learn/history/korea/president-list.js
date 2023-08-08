@@ -25,7 +25,6 @@ export default function handler(req, res) {
   console.log(req.query);
   res.status(200)
       .json([
-        
         {index:  '1', name: '이승만', terms: ['1948-07-24', '1952-08-14']},
         {index:  '2', name: '이승만', terms: ['1952-08-15', '1956-08-14']},
         {index:  '3', name: '이승만', terms: ['1956-08-15', '1960-04-27'], tags: [{type: 'info', value :'허정 외무부 장관이 권한대행(1960년 4월 27일~1960년 6월 15일)'},{type: 'info', value :'곽상훈 민의원 의장이 권한대행(1960년 6월 16일~1960년 6월 23일)'},{type: 'info', value :'허정 국무총리가 권한대행(1960년 6월 23일~1960년 8월 7일)'},{type: 'info', value :'백낙준 참의원 의장이 권한대행(1960년 8월 8일~1960년 8월 12일)'}]},
