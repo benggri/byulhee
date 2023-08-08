@@ -10,9 +10,9 @@ export default function TimeLine(
     terms,
     tags,
   }:{
-    index: number;
+    index: Array<Number>;
     name: string;
-    terms: Array<String> | String[];
+    terms: Array<any> | any[];
     tags: Array<Tag> | Tag[] | undefined;
   }
 ) {
@@ -31,8 +31,8 @@ export default function TimeLine(
       <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900"></span>
       <div className="p-4 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-700 dark:border-gray-600">
         <div className="items-center justify-between mb-3 sm:flex">
-          <time className="mb-1 text-xs font-normal text-gray-400 sm:order-last sm:mb-0">{terms[0]} ~ {terms[1] || ''}</time>
-          <div className="text-sm font-semibold text-gray-500 lex dark:text-gray-300">{index}대 대통령  <a href="#" className="font-semibold text-gray-900 dark:text-white hover:underline">{name}</a></div>
+          <time className="mb-1 text-xs font-normal text-gray-400 sm:order-last sm:mb-0 whitespace-pre-wrap">{terms.map((term) => {return ` ${term[0]} ~ ${term[1] || ''} \n`})}</time>
+          <div className="text-sm font-semibold text-gray-500 lex dark:text-gray-300 whitespace-pre-wrap">{index.join(', \n')}대 대통령  <a href="#" className="font-semibold text-gray-900 dark:text-white hover:underline">{name}</a></div>
         </div>
         {
           tags?.map((tag, _index) => {
