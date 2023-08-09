@@ -15,10 +15,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="container h-full">
-        <Nav></Nav>
-        <main className='overflow-auto'>
+        <Nav>
           {children}
-        </main>
+        </Nav>
       </body>
     </html>
   )
