@@ -121,6 +121,7 @@ export default function Nav({
         </aside>
       </header>
       <main className='overflow-auto'>
+        <div className='hidden'></div>
         {children}
       </main>
     </>
