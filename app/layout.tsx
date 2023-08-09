@@ -1,6 +1,6 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import Nav from '../src/layout/nav';
+import Nav from '../src/components/layout/nav';
 
 export const metadata: Metadata = {
   title: '별희네',

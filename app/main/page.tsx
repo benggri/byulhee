@@ -10,7 +10,7 @@ export default function Main({
   console.log(`id :: ${id} ::`);
 
   return (
-    <section className="bg-white dark:bg-gray-900">
+    <section className="bg-white mx-auto dark:bg-gray-900">
       <div className="py-4 px-4 mx-auto max-w-screen-xl text-center lg:py-4">
         <p className="text-5xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-5xl dark:text-white">Star&#39;s Home</p>
         <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-400">Here at Star&#39;s Home we focus on markets where art, drawing can unlock long-term value and drive economic growth.</p>
