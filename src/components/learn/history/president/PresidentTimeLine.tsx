@@ -51,13 +51,6 @@ export default function PresidentTimeLine(
                 })
               }
           </div>
-          {/*<div className="text-sm font-semibold text-gray-500 dark:text-gray-300">*/}
-          {/*{*/}
-          {/*  labels.map((label, index) => {*/}
-          {/*    return <p key={'time_line_p_'+index}>{label.index}대 ({label.terms[0]} ~ {label.terms[1] || ''})</p>;*/}
-          {/*  })*/}
-          {/*}*/}
-          {/*</div>*/}
         </div>
         {
           tags && tags?.map((tag, _index) => {
