@@ -85,7 +85,9 @@ function HistoryTimeStepper({
         </div>
         {
           children ?
-          <div className={`w-full grid grid-cols-${children.length}`}></div> :
+          <div className={`w-full grid grid-cols-${children.length}`}>
+            {children.map((child, index) => <div key={`history_child_${index}`} className='text-sm font-semibold text-gray-500 dark:text-gray-300'><p>{child.name}</p><p>{child.year.join('~')}</p></div>)}
+          </div> :
           <div></div>
         }
       </div>
