@@ -5,13 +5,15 @@ import {useEffect, useState} from 'react';
 import PresidentTimeLine from "../../../../src/components/learn/history/president/PresidentTimeLine";
 
 export default function LearnHistoryPresident() {
+  const [area, setArea] = useState('korea');
   const [dataList, setDataList] = useState<any>([]);
+
   useEffect(() => {
     getData();
   }, []);
 
   const getData = () => {
-    axios.get('/api/applications/learn/history/korea/president-list')
+    axios.get(`/api/applications/learn/history/${area}/president-list`)
          .then((res) => setDataList(res.data));
   };
 

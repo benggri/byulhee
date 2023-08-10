@@ -45,11 +45,11 @@ export default function PresidentTimeLine(
             <span className="text-end font-semibold text-gray-900 dark:text-white hover:underline">{name}</span>대통령
           </div>
           <div className='col-span-2 text-sm font-semibold text-gray-500 dark:text-gray-300'>
-              {
-                labels.map((label, index) => {
-                  return <p className='text-end' key={'time_line_p_'+index}>{label.index}대 ({label.terms[0]} ~ {label.terms[1] || ''})</p>;
-                })
-              }
+            {
+              labels.map((label, index) => {
+                return <p className='text-end' key={'time_line_p_'+index}>{label.index}대 ({label.terms[0]} ~ {label.terms[1] || ''})</p>;
+              })
+            }
           </div>
         </div>
         {
