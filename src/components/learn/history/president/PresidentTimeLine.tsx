@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 interface Tag {
   type: string;
   value : string;
@@ -13,10 +15,12 @@ export default function PresidentTimeLine(
     labels,
     name,
     tags,
+    image,
   }:{
     labels: Array<Label> | Label[];
     name: string;
     tags: Array<Tag> | Tag[] | undefined;
+    image: string | undefined;
   }
 ) {
   const getLabelColor = (type:string) => {
@@ -34,6 +38,9 @@ export default function PresidentTimeLine(
       <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900"></span>
       <div className="p-4 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-700 dark:border-gray-600">
         <div className="items-center justify-between mb-3 sm:flex">
+          {
+            image && <Image src={image} alt={name} width={100} height={100} />
+          }
           <div className="text-sm font-semibold text-gray-500 dark:text-gray-300">
             <a href="#" className="font-semibold text-gray-900 dark:text-white hover:underline">{name}</a>
             대통령
