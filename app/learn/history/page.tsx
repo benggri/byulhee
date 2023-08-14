@@ -1,9 +1,37 @@
 'use client';
 
 import axios from 'axios';
+import dynamic from 'next/dynamic';
 import {useEffect, useState} from 'react';
 
 export default function LearnHistory() {
+  const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
+  const [options, setOptions] = useState({
+    chart: {
+      id:'apexchart-example'
+    }, 
+    plotOptions: {
+      bar: {
+        horizontal: true
+      }
+    },
+    legend: {
+      show: false
+    },
+    stroke: {
+      show: true,
+      width: 5
+    },
+    dropShadow: {
+      enabled: true,
+      top: 0,
+      left: 0,
+      blur: 3,
+      opacity: 0.5
+    }
+  });
+  const [series, setSeries]  = useState<any[]>([]);
+
   const [dataList, setDataList] = useState<HistoryObj[]>([]);
   useEffect(() => {
     getData();
@@ -11,13 +39,33 @@ export default function LearnHistory() {
 
   const getData = () => {
     axios.get('/api/applications/learn/history/korea_history_list')
-         .then((res) => setDataList(res.data));
+         .then((res) => {
+          setSeries([]);
+          let serieList = res.data.map((d:HistoryObj) => {
+            return {
+              x: d.name,
+              y: d.year
+            };
+          });
+          console.log(serieList);
+          setSeries([{
+            data: serieList
+          }]);
+
+          setDataList(res.data);
+         });
   };
 
   return (
     <section className="bg-white dark:bg-gray-900">
       <div className="py-4 px-4 mx-auto max-w-screen-xl text-center lg:py-4">
         <p className="text-5xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-5xl dark:text-white">History of Korea</p>
+      </div>
+      <div className="inline-flex items-cneter justify-center w-full">
+        <hr className="w-64 h-1 my-8 bg-gray-200 border-0 rounded dark:bg-gray-700" />
+      </div>
+      <div className="w-96 sm:w-96 md:w-48 lg:w-1/2 h-full mx-auto">
+        <Chart options={options} series={series} type="rangeBar" width='100%' />
       </div>
       <div className="inline-flex items-cneter justify-center w-full">
         <hr className="w-64 h-1 my-8 bg-gray-200 border-0 rounded dark:bg-gray-700" />
@@ -57,7 +105,7 @@ export default function LearnHistory() {
 
 interface HistoryObj {
   name: string;
-  year: Array<string> | string[];
+  year: Array<Number> | Number[];
   children: Array<HistoryObj> | HistoryObj[] | undefined | null;
 }
 

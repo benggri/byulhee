@@ -3,7 +3,7 @@
 import dynamic from 'next/dynamic';
 import {useEffect, useState} from 'react';
 
-export default function Char() {
+export default function Chartpage() {
   const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
   const options = {
     chart: {
